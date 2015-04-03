@@ -25,8 +25,13 @@ set backspace=indent,eol,start
 " Line numbers
 set number
 
+
 " Search highlighting
 set hlsearch
+
+
+" Flag lines > 80 characters
+:set colorcolumn=80
 
 
 " Block (brackets, etc.) highlighting
