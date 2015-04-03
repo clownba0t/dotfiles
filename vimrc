@@ -31,7 +31,7 @@ set hlsearch
 
 
 " Flag lines > 80 characters
-:set colorcolumn=80
+set colorcolumn=80
 
 
 " Block (brackets, etc.) highlighting
