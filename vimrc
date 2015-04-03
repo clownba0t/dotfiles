@@ -50,3 +50,31 @@ set softtabstop=2
 
 " Font stuff for gvim (should probably be in gvimrc)
 set guifont=Menlo\ Regular:h20
+
+
+" Plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'Lokaltog/powerline', { 'rtp':'/powerline/bindings/vim' }
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'bronson/vim-trailing-whitespace'
+
+" initialise plugins
+execute pathogen#infect()
+
+call vundle#end()            " required
+filetype plugin indent on    " required
