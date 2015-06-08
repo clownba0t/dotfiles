@@ -73,6 +73,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'bronson/vim-trailing-whitespace'
 
+" set the runtime path to include pathogen and initialize
+set rtp+=~/.vim/pathogen/vim-pathogen
 " initialise plugins
 execute pathogen#infect()
 
