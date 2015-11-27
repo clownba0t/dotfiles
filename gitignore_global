@@ -1,2 +1,2 @@
 # Vim swap files
-.sw*
+*.sw*
