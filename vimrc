@@ -41,12 +41,15 @@ set showmatch
 " Indent automagically
 set autoindent
 
-" Handle tabs
+" Handle tabs/spacing
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set softtabstop=2
 
+" File type overrides for tabs/spacing
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Font stuff for gvim (should probably be in gvimrc)
 set guifont=Menlo\ Regular:h20
