@@ -41,15 +41,18 @@ set showmatch
 " Indent automagically
 set autoindent
 
+
 " Handle tabs/spacing
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+
 " File type overrides for tabs/spacing
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
 
 " Font stuff for gvim (should probably be in gvimrc)
 set guifont=Menlo\ Regular:h20
@@ -66,7 +69,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'Lokaltog/powerline', { 'rtp':'/powerline/bindings/vim' }
+"Plugin 'Lokaltog/powerline', { 'rtp':'/powerline/bindings/vim' }
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 
@@ -76,6 +79,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'bronson/vim-trailing-whitespace'
 
+Plugin 'pangloss/vim-javascript' " Dependency
+Plugin 'mxw/vim-jsx'
+
+
 " set the runtime path to include pathogen and initialize
 set rtp+=~/.vim/pathogen/vim-pathogen
 " initialise plugins
@@ -83,3 +90,8 @@ execute pathogen#infect()
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+" Plugin settings
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
