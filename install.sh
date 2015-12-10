@@ -15,6 +15,13 @@ else
   echo "WARNING: ~/.gitignore_global already exists - skipping"
 fi
 
+# Git shortcuts
+if [ ! -e ~/.git_shortcuts ]; then
+  cp git_shortcuts ~/.git_shortcuts
+  echo ". ~/.git_shortcuts" >> ~/.bashrc
+  source ~/.bashrc
+fi
+
 # Bootstrap Vim plugin installers
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim

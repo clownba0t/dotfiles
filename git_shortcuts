@@ -1,0 +1,25 @@
+alias gf="git fetch"
+alias gd="git checkout develop"
+alias gpl="git pull"
+alias gps="git push"
+alias gs="git status"
+alias gaa="git add -A"
+alias glcdiff="git diff `git reflog | head -1 | awk '{ print $1 }'`"
+
+function gb() {
+  diff -u <(git rev-list --first-parent `git branch | grep ^\* | awk '{ print $2 }'`) \
+    <(git rev-list --first-parent develop) | \
+    sed -ne 's/^ //p' | head -1
+}
+
+function gbdiff() {
+  git diff --name-only `gb`
+}
+
+function gcm() {
+  git commit -m $1
+}
+
+function gc() {
+  git checkout $1
+}
